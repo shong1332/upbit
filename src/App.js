@@ -2,7 +2,7 @@
 
 import axios from 'axios';
 import { v4 as uuidv4 } from "uuid";
-import jwt from "jsonwebtoken";
+// import jwt from "jsonwebtoken";
 
 
 function App() {
@@ -25,36 +25,36 @@ function App() {
   
   
   
-  function getAuthorizationTokenNoParam() {
+  // function getAuthorizationTokenNoParam() {
   
-    const payload = {
-      access_key: 'LdxqxWRJl5LxUKL9vAwIUANXTSkPxEqFUfiHYHix',
-      nonce: uuidv4(),
-    };
+  //   const payload = {
+  //     access_key: 'LdxqxWRJl5LxUKL9vAwIUANXTSkPxEqFUfiHYHix',
+  //     nonce: uuidv4(),
+  //   };
   
-    const jwtToken = jwt.sign(payload, 'OTB2N9KwpB3sxP6gFoFJZTJfI1FlXyL8K5Blf0GC');
+  //   const jwtToken = jwt.sign(payload, 'OTB2N9KwpB3sxP6gFoFJZTJfI1FlXyL8K5Blf0GC');
   
-    console.log(jwtToken)
-    return `Bearer ${jwtToken}`;
-  }
-  
-  
+  //   console.log(jwtToken)
+  //   return `Bearer ${jwtToken}`;
+  // }
   
   
-  const options = {
-    method: 'GET',
-    url: 'https://api.upbit.com/v1/accounts',
-    headers: {accept: 'application/json',  Authorization: getAuthorizationTokenNoParam() }
-  };
   
-   const aaa =  axios
-    .request(options)
-    .then(function (response) {
-      console.log(response.data);
-    })
-    .catch(function (error) {
-      console.error(error);
-    });
+  
+  // const options = {
+  //   method: 'GET',
+  //   url: 'https://api.upbit.com/v1/accounts',
+  //   headers: {accept: 'application/json',  Authorization: getAuthorizationTokenNoParam() }
+  // };
+  
+  //  const aaa =  axios
+  //   .request(options)
+  //   .then(function (response) {
+  //     console.log(response.data);
+  //   })
+  //   .catch(function (error) {
+  //     console.error(error);
+  //   });
   
   
 
@@ -63,12 +63,12 @@ function App() {
 
   
   const onClick = async () => {
-    // try {
-    //   const exchangeRate = await getBTCExchangeRate();
-    //   console.log('Exchange Rate:', exchangeRate);
-    // } catch (error) { 
-    //   console.error('Error fetching Polygon exchange rate:', error);
-    // }
+    try {
+      const exchangeRate = await getBTCExchangeRate();
+      console.log('Exchange Rate:', exchangeRate);
+    } catch (error) { 
+      console.error('Error fetching Polygon exchange rate:', error);
+    }
   };
 
   
