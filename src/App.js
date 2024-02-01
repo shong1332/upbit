@@ -16,7 +16,7 @@ function App() {
   
         'https://api.upbit.com/v1/ticker?markets=KRW-BTC',
       );
-      console.log("dddddsfㅇㅇㄴㅇㄹddd")
+      console.log("dddasdfddsfㅇㅇㄴㅇㄹddd")
       return response.data[0].trade_price;
       
     } catch (error) {
