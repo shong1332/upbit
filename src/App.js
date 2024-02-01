@@ -16,7 +16,9 @@ function App() {
   
         'https://api.upbit.com/v1/ticker?markets=KRW-BTC',
       );
+      console.log("dd")
       return response.data[0].trade_price;
+      
     } catch (error) {
       console.error('Error fetching Polygon exchange rate:', error);
       return false;
